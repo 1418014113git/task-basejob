@@ -1,0 +1,12 @@
+.idea
+.classpath
+.project
+*.iml
+.travis.yml
+target/
+.DS_Store
+.gitattributes
+nmghr-basic-job-executor-samples/
+doc/
+.settings
+.github

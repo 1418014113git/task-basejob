@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nmghr.basic</groupId>
+	<artifactId>nmghr-basic-job</artifactId>
+	<version>0.2.3</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>nmghr-basic-job-core</module>
+		<module>nmghr-basic-job-admin</module>
+		<module>nmghr-basic-rpc-core</module>
+		<module>nmghr-basic-registry-client</module>
+    </modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.test.skip>true</maven.test.skip>
+		<spring-boot.version>1.5.19.RELEASE</spring-boot.version>
+		<mybatis-spring-boot-starter.version>1.3.3</mybatis-spring-boot-starter.version>
+		<mysql-connector-java.version>5.1.47</mysql-connector-java.version>
+		<spring.version>4.3.22.RELEASE</spring.version>
+		<freemarker.version>2.3.28</freemarker.version>
+		<slf4j-api.version>1.7.25</slf4j-api.version>
+		<junit.version>4.12</junit.version>
+		<commons-exec.version>1.3</commons-exec.version>
+		<commons-lang3.version>3.8.1</commons-lang3.version>
+		<groovy.version>2.5.6</groovy.version>
+		<quartz.version>2.3.0</quartz.version>
+		<netty.version>4.1.33.Final</netty.version>
+		<mina.version>2.0.19</mina.version>
+		<jetty-server.version>9.2.26.v20180806</jetty-server.version>
+		<hessian.version>4.0.60</hessian.version>
+		<protostuff.version>1.6.0</protostuff.version>
+		<objenesis.version>2.6</objenesis.version>
+		<kryo.version>4.0.2</kryo.version>
+		<jackson.version>2.9.8</jackson.version>
+		<zookeeper.version>3.4.13</zookeeper.version>
+	</properties>
+	
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <!-- 生成sources源码包的插件 -->
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <configuration>
+          <attach>true</attach>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <name>Nexus Release Repository</name>
+      <url>http://192.168.43.32:8081/repository/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>Nexus Snapshot Repository</name>
+      <url>http://192.168.43.32:8081/repository/snapshots/</url>
+    </snapshotRepository>
+	<!--repository>
+      <id>remote-releases</id>
+      <name>Nexus Release Repository</name>
+      <url>http://192.168.42.218/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>remote-snapshots</id>
+      <name>Nexus Snapshot Repository</name>
+      <url>http://192.168.42.218/content/repositories/snapshots/</url>
+    </snapshotRepository-->
+  </distributionManagement>
+</project>
